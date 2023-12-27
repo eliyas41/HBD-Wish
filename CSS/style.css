@@ -1,0 +1,777 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #239ac2;
+}
+.birthdayCard {
+  position: relative;
+  width: 250px;
+  height: 350px;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transform: perspective(2500px);
+  transition: 1s;
+}
+
+.birthdayCard:hover {
+  transform: perspective(2500px) rotate(5deg);
+  box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2),
+    0 10px 100px rgba(0, 0, 0, 0.5);
+}
+
+.birthdayCard:hover .cardFront {
+  transform: rotateY(-160deg);
+}
+
+.birthdayCard:hover .Happy {
+  visibility: hidden;
+}
+
+.cardFront {
+  position: relative;
+  background-color: #fff;
+  width: 250px;
+  height: 350px;
+  overflow: hidden;
+  transform-origin: left;
+  box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2),
+    30px 0 50px rgba(0, 0, 0, 0.4);
+  transition: 0.8s;
+}
+
+span {
+  color: red;
+}
+
+.kl {
+  font-size: 13px;
+}
+
+.lk {
+  font-size: 15px;
+  color: #000;
+}
+
+.center{
+  width: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 15px;
+}
+
+.blow {
+  margin-top: 230px;
+  font-size: 19px;
+}
+
+.dear {
+  color: red;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.main {
+  font-size: 17px;
+  font-weight: bold;
+}
+.Happy {
+  font-family: tahoma, sans-sarif;
+  text-align: center;
+  margin: 25px;
+  background-image: linear-gradient(120deg, #ffd856 0%, #f98c6e 100%);
+  transition: 0.1s;
+}
+
+.ballons {
+  position: absolute;
+}
+
+.ballon-1,
+.ballon-2,
+.ballon-3,
+.ballon-4 {
+  position: absolute;
+  width: 85px;
+  height: 95px;
+  border-radius: 50%;
+}
+
+.ballon-1 {
+  background-color: rgba(255, 40, 90, 0.7);
+  left: -10px;
+  top: 50px;
+}
+
+.ballon-2 {
+  background-color: rgba(9, 215, 160, 0.7);
+  left: 50px;
+  top: 20px;
+}
+
+.ballon-3 {
+  background-color: rgba(255, 186, 26, 0.7);
+  left: 110px;
+  top: 50px;
+}
+
+.ballon-4 {
+  background-color: rgba(12, 122, 159, 0.7);
+  left: 170px;
+  top: 50px;
+}
+
+.ballon-1::before,
+.ballon-2::before,
+.ballon-3::before,
+.ballon-4::before {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 155px;
+  background-color: #ffc848;
+  top: 95px;
+  left: 43px;
+}
+
+.ballon-1::after,
+.ballon-2::after,
+.ballon-3::after,
+.ballon-4::after {
+  content: "";
+  position: absolute;
+  border-right: 7px solid transparent;
+  border-left: 7px solid transparent;
+  top: 94px;
+  left: 37px;
+}
+
+.ballon-1::after {
+  border-bottom: 10px solid #ff3e6b;
+}
+
+.ballon-2::after {
+  border-bottom: 10px solid #04b183;
+}
+
+.ballon-3::after {
+  border-bottom: 10px solid #ffc94c;
+}
+
+.ballon-4::after {
+  border-bottom: 10px solid #13a9bd;
+}
+
+.cardinside {
+  position: absolute;
+  background-color: #fff;
+  width: 250px;
+  height: 350px;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2);
+}
+
+p {
+  font-family: "Brush Script MT", cursive;
+  margin: 40px;
+  color: #333;
+  font-weight: bold;
+}
+
+.name {
+  position: absolute;
+  left: 0px;
+  top: 220px;
+  color: #333;
+}
+
+.back {
+  font-family: Tahoma, sans-serif;
+  color: #333;
+  text-align: center;
+  margin: 30px;
+  outline-color: #333;
+  outline-style: dotted;
+}
+
+/*-----giftcontainer box----*/
+
+.giftcontainer {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 20px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+  top: 300px;
+  left: 120px;
+}
+
+.gift {
+  position: absolute;
+  width: 120px;
+  height: 50px;
+  background-color: #e9c46a;
+}
+
+.gift::before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 50px;
+  background-color: #e76f51;
+  left: 52px;
+}
+
+.gift::after {
+  content: "";
+  position: absolute;
+  box-shadow: inset 0 10px rgba(0, 0, 0, 0.3);
+  width: 120px;
+  height: 100px;
+}
+
+#click {
+  display: none;
+}
+
+.click {
+  position: absolute;
+  background-color: #e9c46a;
+  width: 140px;
+  height: 20px;
+  top: -20px;
+  left: -10px;
+  transform-origin: bottom left;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.click::before {
+  position: absolute;
+  content: "";
+  width: 15px;
+  height: 20px;
+  background-color: #e76f51;
+  left: 62px;
+}
+
+.click::after {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 0;
+  border-bottom: 15px solid #e76f51;
+  border-top: 15px solid #e76f51;
+  border-left: 0px solid transparent;
+  border-right: 15px solid transparent;
+  transform: rotate(-90deg);
+  left: 59px;
+  top: -25px;
+}
+
+#click:checked + .click {
+  transform: rotate(-110deg) scale(0.85);
+}
+
+#click:checked ~ .wishes {
+  transform: translateY(-20px);
+}
+
+.wishes {
+  position: absolute;
+  font-size: 14px;
+  transition: 0.5s;
+  color: #333;
+  text-align: center;
+  z-index: -1;
+  color: rgb(255, 0, 212);
+  text-shadow: 0 0 10px #020202;
+}
+
+/* -------ANIMATE styLE---------- */
+ul {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  text-transform: uppercase;
+  text-align: center;
+  align-items: center;
+}
+ul li {
+  font-weight: bold;
+  list-style: none;
+  font-family: Arial;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  text-shadow: none;
+  animation: animate 1s infinite linear;
+}
+@keyframes animate {
+  0% {
+    color: #484848;
+    text-shadow: none;
+  }
+  18% {
+    color: #484848;
+    text-shadow: none;
+  }
+  20% {
+    color: #ff00aa;
+    text-shadow: 0 0 7px #09ff00, 0 0 20px #15ff00;
+  }
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #239ac2;
+  }
+  .birthdayCard {
+    position: relative;
+    width: 250px;
+    height: 350px;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transform: perspective(2500px);
+    transition: 1s;
+  }
+
+  .birthdayCard:hover {
+    transform: perspective(2500px) rotate(5deg);
+    box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2),
+      0 10px 100px rgba(0, 0, 0, 0.5);
+  }
+
+  .birthdayCard:hover .cardFront {
+    transform: rotateY(-160deg);
+  }
+
+  .birthdayCard:hover .Happy {
+    visibility: hidden;
+  }
+
+  .cardFront {
+    position: relative;
+    background-color: #fff;
+    width: 250px;
+    height: 350px;
+    overflow: hidden;
+    transform-origin: left;
+    box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2),
+      30px 0 50px rgba(0, 0, 0, 0.4);
+    transition: 0.8s;
+  }
+
+  span {
+    color: red;
+  }
+
+  .kl {
+    font-size: 17px;
+  }
+
+  .lk {
+    font-size: 17px;
+    color: #000;
+  }
+
+  .dear {
+    color: #000;
+    font-size: 17px;
+    font-weight: bold;
+  }
+
+  .main {
+    font-size: 23px;
+    font-weight: bold;
+  }
+  .Happy {
+    font-family: tahoma, sans-sarif;
+    text-align: center;
+    margin: 25px;
+    background-image: linear-gradient(120deg, #ffd856 0%, #f98c6e 100%);
+    transition: 0.1s;
+  }
+
+  .ballons {
+    position: absolute;
+  }
+
+  .ballon-1,
+  .ballon-2,
+  .ballon-3,
+  .ballon-4 {
+    position: absolute;
+    width: 85px;
+    height: 95px;
+    border-radius: 50%;
+  }
+
+  .ballon-1 {
+    background-color: rgba(255, 40, 90, 0.7);
+    left: -10px;
+    top: 50px;
+  }
+
+  .ballon-2 {
+    background-color: rgba(9, 215, 160, 0.7);
+    left: 50px;
+    top: 20px;
+  }
+
+  .ballon-3 {
+    background-color: rgba(255, 186, 26, 0.7);
+    left: 110px;
+    top: 50px;
+  }
+
+  .ballon-4 {
+    background-color: rgba(12, 122, 159, 0.7);
+    left: 170px;
+    top: 50px;
+  }
+
+  .ballon-1::before,
+  .ballon-2::before,
+  .ballon-3::before,
+  .ballon-4::before {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 155px;
+    background-color: #ffc848;
+    top: 95px;
+    left: 43px;
+  }
+
+  .ballon-1::after,
+  .ballon-2::after,
+  .ballon-3::after,
+  .ballon-4::after {
+    content: "";
+    position: absolute;
+    border-right: 7px solid transparent;
+    border-left: 7px solid transparent;
+    top: 94px;
+    left: 37px;
+  }
+
+  .ballon-1::after {
+    border-bottom: 10px solid #ff3e6b;
+  }
+
+  .ballon-2::after {
+    border-bottom: 10px solid #04b183;
+  }
+
+  .ballon-3::after {
+    border-bottom: 10px solid #ffc94c;
+  }
+
+  .ballon-4::after {
+    border-bottom: 10px solid #13a9bd;
+  }
+
+  .cardinside {
+    position: absolute;
+    background-color: #fff;
+    width: 250px;
+    height: 350px;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2);
+  }
+
+  p {
+    font-family: "Brush Script MT", cursive;
+    margin: 40px;
+    color: #333;
+    font-weight: bold;
+  }
+
+  .name {
+    position: absolute;
+    left: 0px;
+    top: 220px;
+    color: #333;
+  }
+
+  .back {
+    font-family: Tahoma, sans-serif;
+    color: #333;
+    text-align: center;
+    margin: 30px;
+    outline-color: #333;
+    outline-style: dotted;
+  }
+
+  /*-----giftcontainer box----*/
+
+  .giftcontainer {
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 20px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+    top: 300px;
+    left: 120px;
+  }
+
+  .gift {
+    position: absolute;
+    width: 120px;
+    height: 50px;
+    background-color: #e9c46a;
+  }
+
+  .gift::before {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 50px;
+    background-color: #e76f51;
+    left: 52px;
+  }
+
+  .gift::after {
+    content: "";
+    position: absolute;
+    box-shadow: inset 0 10px rgba(0, 0, 0, 0.3);
+    width: 120px;
+    height: 100px;
+  }
+
+  #click {
+    display: none;
+  }
+
+  .click {
+    position: absolute;
+    background-color: #e9c46a;
+    width: 140px;
+    height: 20px;
+    top: -20px;
+    left: -10px;
+    transform-origin: bottom left;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+
+  .click::before {
+    position: absolute;
+    content: "";
+    width: 15px;
+    height: 20px;
+    background-color: #e7519c;
+    left: 62px;
+  }
+
+  .click::after {
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 0;
+    border-bottom: 15px solid #e76f51;
+    border-top: 15px solid #e76f51;
+    border-left: 0px solid transparent;
+    border-right: 15px solid transparent;
+    transform: rotate(-90deg);
+    left: 59px;
+    top: -25px;
+  }
+
+  #click:checked + .click {
+    transform: rotate(-110deg) scale(0.85);
+  }
+
+  #click:checked ~ .wishes {
+    transform: translateY(-20px);
+  }
+
+  .wishes {
+    position: absolute;
+    font-size: 14px;
+    transition: 0.5s;
+    color: #333;
+    text-align: center;
+    z-index: -1;
+    color: rgb(255, 0, 212);
+    text-shadow: 0 0 10px #020202;
+  }
+
+  /* -------ANIMATE styLE---------- */
+  ul {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    text-transform: uppercase;
+    text-align: center;
+    align-items: center;
+  }
+  ul li {
+    font-weight: bold;
+    list-style: none;
+    font-family: Arial;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    text-shadow: none;
+    animation: animate 1s infinite linear;
+  }
+  
+  @keyframes animate {
+    0% {
+      color: #484848;
+      text-shadow: none;
+    }
+    18% {
+      color: #484848;
+      text-shadow: none;
+    }
+    20% {
+      color: #ff00aa;
+      text-shadow: 0 0 7px #09ff00, 0 0 20px #15ff00;
+    }
+    30% {
+      color: #484848;
+      text-shadow: none;
+    }
+    35% {
+      color: #00ff4c;
+      text-shadow: 0 0 7px #006eff, 0 0 20px #ea00ff;
+    }
+    70% {
+      color: #484848;
+      text-shadow: none;
+    }
+    85% {
+      color: #d400ff;
+      text-shadow: 0 0 7px #51ff00, 0 0 20px #ff00f2;
+    }
+    90% {
+      color: #484848;
+      text-shadow: none;
+    }
+    100% {
+      color: #484848;
+      text-shadow: none;
+    }
+  }
+
+  ul li:nth-child(1) {
+    animation-delay: 0.2s;
+  }
+  ul li:nth-child(2) {
+    animation-delay: 0.4s;
+  }
+  ul li:nth-child(3) {
+    animation-delay: 0.6s;
+  }
+  ul li:nth-child(4) {
+    animation-delay: 0.8s;
+  }
+  ul li:nth-child(5) {
+    animation-delay: 1s;
+  }
+  ul li:nth-child(6) {
+    animation-delay: 1.2s;
+  }
+  ul li:nth-child(7) {
+    animation-delay: 1.4s;
+  }
+  ul li:nth-child(8) {
+    animation-delay: 1.6s;
+  }
+  ul li:nth-child(9) {
+    animation-delay: 1.8s;
+  }
+  ul li:nth-child(10) {
+    animation-delay: 2s;
+  }
+  ul li:nth-child(11) {
+    animation-delay: 2.2s;
+  }
+  ul li:nth-child(12) {
+    animation-delay: 2.4s;
+  }
+  ul li:nth-child(13) {
+    animation-delay: 2.6s;
+  } 
+  30% {
+    color: #484848;
+    text-shadow: none;
+  }
+  35% {
+    color: #00ff4c;
+    text-shadow: 0 0 7px #006eff, 0 0 20px #ea00ff;
+  }
+  70% {
+    color: #484848;
+    text-shadow: none;
+  }
+  85% {
+    color: #d400ff;
+    text-shadow: 0 0 7px #51ff00, 0 0 20px #ff00f2;
+  }
+  90% {
+    color: #484848;
+    text-shadow: none;
+  }
+  100% {
+    color: #484848;
+    text-shadow: none;
+  }
+}
+
+ul li:nth-child(1) {
+  animation-delay: 0.2s;
+}
+ul li:nth-child(2) {
+  animation-delay: 0.4s;
+}
+ul li:nth-child(3) {
+  animation-delay: 0.6s;
+}
+ul li:nth-child(4) {
+  animation-delay: 0.8s;
+}
+ul li:nth-child(5) {
+  animation-delay: 1s;
+}
+ul li:nth-child(6) {
+  animation-delay: 1.2s;
+}
+ul li:nth-child(7) {
+  animation-delay: 1.4s;
+}
+ul li:nth-child(8) {
+  animation-delay: 1.6s;
+}
+ul li:nth-child(9) {
+  animation-delay: 1.8s;
+}
+ul li:nth-child(10) {
+  animation-delay: 2s;
+}
+ul li:nth-child(11) {
+  animation-delay: 2.2s;
+}
+ul li:nth-child(12) {
+  animation-delay: 2.4s;
+}
+ul li:nth-child(13) {
+  animation-delay: 2.6s;
+}
